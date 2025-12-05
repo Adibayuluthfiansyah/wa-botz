@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Program Keluarga Harapan (PKH)",
+    "description": "Bantuan tunai bersyarat untuk keluarga miskin dengan fokus kesehatan dan pendidikan",
+    "amount": "Rp 500.000 - Rp 3.000.000 per tahun",
+    "requirements": [
+      "Terdaftar dalam DTKS",
+      "Memiliki komponen: ibu hamil, anak 0-6 tahun, anak SD/SMP/SMA, lansia 70+, atau disabilitas berat",
+      "KTP & KK asli + fotocopy",
+      "Surat Keterangan Tidak Mampu",
+      "Bersedia memenuhi kewajiban kesehatan & pendidikan"
+    ],
+    "howToApply": "Daftar melalui Musyawarah Desa atau ke Dinas Sosial. Atau ketik 'daftar PKH' untuk daftar online."
+  }
+]
