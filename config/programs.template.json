@@ -1,0 +1,54 @@
+[
+  {
+    "_comment": "=============================================================",
+    "_instruction_1": "TEMPLATE INI UNTUK MEMBUAT PROGRAM BARU",
+    "_instruction_2": "Copy-paste block program di bawah dan isi dengan data asli",
+    "_instruction_3": "Ganti semua [PLACEHOLDER] dengan data yang sesuai",
+    "_instruction_4": "Hapus atau comment line yang dimulai dengan _comment atau _instruction",
+    "_instruction_5": "=============================================================",
+
+    "name": "[NAMA PROGRAM LENGKAP]",
+    "description": "[DESKRIPSI SINGKAT 1-2 KALIMAT TENTANG PROGRAM INI]",
+    "amount": "[NOMINAL BANTUAN - Contoh: Rp 500.000 per bulan]",
+    "requirements": [
+      "[SYARAT 1 - Contoh: Terdaftar di DTKS]",
+      "[SYARAT 2 - Contoh: KTP & KK aktif]",
+      "[SYARAT 3 - Contoh: Usia minimal 18 tahun]",
+      "[SYARAT 4 - dst...]",
+      "[SYARAT 5 - tambah atau kurangi sesuai kebutuhan]"
+    ],
+    "howToApply": "[CARA DAFTAR - Contoh: Daftar ke kelurahan dengan membawa dokumen persyaratan atau ketik 'daftar [NAMA PROGRAM]']"
+  },
+
+  {
+    "_example_title": "========== CONTOH PROGRAM YANG SUDAH DIISI ==========",
+    "_example_note": "Lihat contoh di bawah untuk referensi format yang benar",
+
+    "name": "Bantuan Sosial Contoh",
+    "description": "Ini contoh bantuan sosial untuk demonstrasi format data",
+    "amount": "Rp 1.000.000 per bulan",
+    "requirements": [
+      "Terdaftar di DTKS",
+      "Warga Pontianak minimal 1 tahun",
+      "KTP & KK asli + fotocopy",
+      "Tidak memiliki penghasilan tetap",
+      "Usia 18-60 tahun"
+    ],
+    "howToApply": "Daftar ke kantor Dinas Sosial dengan membawa dokumen persyaratan lengkap. Bisa juga ketik 'daftar Bantuan Sosial Contoh' untuk pendaftaran online."
+  },
+
+  {
+    "_tips_title": "========== TIPS MENGISI DATA PROGRAM ==========",
+    "_tip_1": "NAME: Gunakan nama resmi program sesuai SK/kebijakan",
+    "_tip_2": "DESCRIPTION: Jelaskan apa program ini dan untuk siapa (singkat, jelas)",
+    "_tip_3": "AMOUNT: Sebutkan nominal dan periode (per bulan/tahun/sekali)",
+    "_tip_4": "REQUIREMENTS: List semua syarat sejelas mungkin, hindari bahasa teknis",
+    "_tip_5": "HOWTOAPPLY: Jelaskan step by step cara daftar, sertakan kontak jika perlu",
+    "_tip_6": "",
+    "_tip_7": "JANGAN LUPA:",
+    "_tip_8": "- Gunakan tanda kutip ganda (\") untuk string",
+    "_tip_9": "- Pisahkan item dalam array dengan koma (,)",
+    "_tip_10": "- Jangan lupa koma antar program (kecuali program terakhir)",
+    "_tip_11": "- Validasi JSON setelah edit di: https://jsonlint.com"
+  }
+]

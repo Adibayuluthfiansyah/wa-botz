@@ -1,15 +1,131 @@
 [
   {
+    "_comment": "=============================================================",
+    "_note_1": "TEMPLATE PROGRAM BANTUAN SOSIAL",
+    "_note_2": "Format setiap program:",
+    "_note_3": "  - name: Nama resmi program",
+    "_note_4": "  - description: Penjelasan singkat (1-2 kalimat)",
+    "_note_5": "  - amount: Nominal bantuan (opsional, bisa dikosongkan)",
+    "_note_6": "  - requirements: Array berisi list syarat (minimal 3-5 syarat)",
+    "_note_7": "  - howToApply: Cara mendaftar dan info tambahan",
+    "_note_8": "",
+    "_note_9": "CARA EDIT:",
+    "_note_10": "1. Ganti 'name' dengan nama program resmi dari Dinas Sosial",
+    "_note_11": "2. Update 'description' dengan deskripsi yang akurat",
+    "_note_12": "3. Sesuaikan 'amount' dengan nominal yang berlaku",
+    "_note_13": "4. Update 'requirements' dengan syarat terbaru",
+    "_note_14": "5. Ubah 'howToApply' dengan prosedur pendaftaran yang valid",
+    "_note_15": "6. Tambah/kurangi program sesuai kebutuhan",
+    "_note_16": "",
+    "_note_17": "TIPS:",
+    "_note_18": "- Gunakan bahasa yang mudah dipahami masyarakat awam",
+    "_note_19": "- Jangan terlalu panjang, fokus pada info penting",
+    "_note_20": "- Selalu update jika ada perubahan kebijakan",
+    "_note_21": "=============================================================",
+
     "name": "Program Keluarga Harapan (PKH)",
-    "description": "Bantuan tunai bersyarat untuk keluarga miskin dengan fokus kesehatan dan pendidikan",
-    "amount": "Rp 500.000 - Rp 3.000.000 per tahun",
+    "description": "Bantuan tunai bersyarat untuk keluarga miskin dengan fokus kesehatan dan pendidikan anak",
+    "amount": "Rp 500.000 - Rp 3.000.000 per tahun (tergantung komponen keluarga)",
     "requirements": [
-      "Terdaftar dalam DTKS",
+      "Terdaftar dalam DTKS sebagai keluarga sangat miskin atau miskin",
       "Memiliki komponen: ibu hamil, anak 0-6 tahun, anak SD/SMP/SMA, lansia 70+, atau disabilitas berat",
       "KTP & KK asli + fotocopy",
-      "Surat Keterangan Tidak Mampu",
-      "Bersedia memenuhi kewajiban kesehatan & pendidikan"
+      "Surat Keterangan Tidak Mampu dari RT/RW",
+      "Bersedia memenuhi kewajiban kesehatan (posyandu, imunisasi) dan pendidikan (75% kehadiran sekolah)"
     ],
-    "howToApply": "Daftar melalui Musyawarah Desa atau ke Dinas Sosial. Atau ketik 'daftar PKH' untuk daftar online."
+    "howToApply": "Pendaftaran melalui Musyawarah Desa/Kelurahan atau datang langsung ke Dinas Sosial dengan membawa dokumen persyaratan. Atau ketik 'daftar PKH' untuk pendaftaran online."
+  },
+
+  {
+    "name": "Bantuan Pangan Non Tunai (BPNT)",
+    "description": "Bantuan pangan dalam bentuk uang elektronik yang bisa dibelanjakan di e-Warung untuk beli beras, telur, atau bahan pangan lainnya",
+    "amount": "Rp 200.000 per bulan per keluarga",
+    "requirements": [
+      "Terdaftar dalam DTKS sebagai 25% ekonomi terbawah",
+      "Memiliki KTP & KK yang masih aktif",
+      "Prioritas: keluarga dengan balita, ibu hamil/menyusui, atau lansia",
+      "Tidak sedang menerima bantuan PKH",
+      "Bersedia mengambil bantuan di e-Warung yang ditunjuk",
+      "Memiliki rekening bank atau siap dibuatkan (gratis)"
+    ],
+    "howToApply": "Pendaftaran otomatis berdasarkan data DTKS. Jika merasa memenuhi syarat tapi belum menerima, hubungi kelurahan untuk verifikasi data atau ketik 'daftar BPNT' untuk pendaftaran online."
+  },
+
+  {
+    "name": "Program Indonesia Pintar (PIP)",
+    "description": "Bantuan pendidikan untuk anak sekolah dari keluarga miskin agar bisa terus bersekolah",
+    "amount": "SD: Rp 450.000/tahun, SMP: Rp 750.000/tahun, SMA/SMK: Rp 1.000.000/tahun",
+    "requirements": [
+      "Anak usia sekolah (SD/SMP/SMA/SMK) yang masih aktif sekolah",
+      "Keluarga terdaftar di DTKS atau penerima PKH/BPNT",
+      "Kartu Indonesia Pintar (KIP) atau Kartu Keluarga Sejahtera (KKS)",
+      "Rapor atau surat keterangan masih sekolah",
+      "Fotocopy KTP orang tua & KK",
+      "Rekening bank atas nama siswa (atau orang tua/wali)"
+    ],
+    "howToApply": "Daftar melalui sekolah dengan membawa KIP/KKS dan dokumen persyaratan. Atau daftar langsung ke Dinas Sosial. Ketik 'daftar PIP' untuk info lebih lanjut."
+  },
+
+  {
+    "name": "Bantuan Langsung Tunai (BLT)",
+    "description": "Bantuan uang tunai langsung untuk keluarga miskin dan rentan miskin, biasanya diberikan saat kondisi darurat atau kebijakan khusus pemerintah",
+    "amount": "Rp 300.000 - Rp 600.000 per bulan (tergantung kebijakan yang berlaku)",
+    "requirements": [
+      "Terdaftar di DTKS sebagai keluarga miskin/rentan miskin",
+      "KTP & KK aktif",
+      "Tidak memiliki penghasilan tetap atau penghasilan di bawah UMR",
+      "Prioritas: kehilangan pekerjaan, terdampak bencana, atau kondisi darurat lainnya",
+      "Memiliki rekening bank aktif",
+      "Surat Keterangan Tidak Mampu"
+    ],
+    "howToApply": "Pendaftaran dibuka saat ada kebijakan BLT dari pemerintah. Biasanya otomatis dari DTKS atau melalui pengumuman RT/RW. Pantau info terbaru atau ketik 'daftar BLT' untuk cek ketersediaan."
+  },
+
+  {
+    "name": "Bantuan Sosial Lansia",
+    "description": "Bantuan untuk lansia terlantar atau tidak mampu yang berusia 60 tahun ke atas",
+    "amount": "Rp 300.000 per bulan",
+    "requirements": [
+      "Usia minimal 60 tahun",
+      "Terlantar atau tidak mampu (tidak ada yang menanggung)",
+      "Tidak memiliki penghasilan atau pensiun",
+      "Terdaftar di DTKS",
+      "KTP & KK asli + fotocopy",
+      "Surat keterangan dari RT/RW bahwa benar-benar tidak mampu",
+      "Surat keterangan kesehatan dari puskesmas (jika diperlukan)"
+    ],
+    "howToApply": "Daftar ke Dinas Sosial dengan membawa dokumen persyaratan. Bisa juga melalui kelurahan atau petugas pendamping sosial. Ketik 'daftar Bantuan Lansia' untuk pendaftaran online."
+  },
+
+  {
+    "name": "Bantuan Penyandang Disabilitas Berat",
+    "description": "Bantuan untuk penyandang disabilitas berat yang tidak mampu dan membutuhkan bantuan khusus",
+    "amount": "Rp 300.000 per bulan",
+    "requirements": [
+      "Memiliki disabilitas berat (fisik, mental, intelektual, atau sensorik)",
+      "Tidak mampu bekerja atau memiliki penghasilan tetap",
+      "Terdaftar di DTKS",
+      "Surat keterangan disabilitas dari rumah sakit/puskesmas",
+      "KTP & KK asli + fotocopy",
+      "Surat Keterangan Tidak Mampu",
+      "Foto diri (untuk administrasi)"
+    ],
+    "howToApply": "Daftar ke Dinas Sosial dengan membawa surat keterangan disabilitas dan dokumen persyaratan lainnya. Bisa didampingi keluarga atau pendamping. Ketik 'daftar Bantuan Disabilitas' untuk info lebih lanjut."
+  },
+
+  {
+    "name": "Rehabilitasi Sosial Anak Terlantar",
+    "description": "Program rehabilitasi dan pemberdayaan untuk anak terlantar, anak jalanan, atau anak yang membutuhkan perlindungan khusus",
+    "amount": "Berupa layanan rehabilitasi, pendidikan, pelatihan keterampilan, dan bantuan reintegrasi (bukan uang tunai)",
+    "requirements": [
+      "Anak usia 6-18 tahun",
+      "Anak terlantar, anak jalanan, atau korban eksploitasi",
+      "Tidak bersekolah atau putus sekolah",
+      "Rekomendasi dari Dinas Sosial, sekolah, atau lembaga perlindungan anak",
+      "KTP & KK orang tua/wali (jika ada)",
+      "Surat keterangan dari RT/RW atau kelurahan",
+      "Bersedia mengikuti program rehabilitasi di panti/lembaga sosial"
+    ],
+    "howToApply": "Hubungi Dinas Sosial untuk konsultasi dan asesmen. Bisa juga melalui laporan masyarakat, sekolah, atau lembaga perlindungan anak. Ketik 'daftar Rehabilitasi Anak' atau hubungi langsung: 0812-3456-7890."
   }
 ]

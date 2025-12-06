@@ -1,2 +1,15 @@
 node_modules/
 .env
+.wwebjs_auth/
+.wwebjs_cache/
+README.md
+AGENTS.md
+DEPLOYMENT.md
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db

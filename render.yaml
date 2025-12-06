@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: wa-bot-dinsos
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /ping
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GROQ_API_KEY
+        sync: false
+      - key: BOT_NAME
+        value: Bot Dinas Sosial
+      - key: DINAS_NAME
+        value: Dinas Sosial
+      - key: PORT
+        value: 3000

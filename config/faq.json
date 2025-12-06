@@ -1,7 +1,50 @@
 {
-  "jam operasional, buka jam berapa, tutup jam berapa": "Kantor kami buka:\n📅 Senin - Jumat: 08.00 - 16.00 WIB\n📅 Sabtu - Minggu: TUTUP\n\nPelayanan istirahat: 12.00 - 13.00",
+  "_comment_1": "===================================================",
+  "_comment_2": "FAQ (Frequently Asked Questions) - Pertanyaan Umum",
+  "_comment_3": "===================================================",
+  "_comment_4": "FORMAT: 'keywords, kata kunci, pencarian': 'Jawaban lengkap'",
+  "_comment_5": "- Keywords dipisah dengan koma (,)",
+  "_comment_6": "- Bot akan cocokkan jika user kirim pesan yang mengandung salah satu keyword",
+  "_comment_7": "- Jawaban bisa pakai \\n untuk baris baru",
+  "_comment_8": "- Gunakan emoji untuk membuat jawaban lebih menarik",
+  "_comment_9": "===================================================",
+  "_comment_10": "",
+
+  "_section_1": "========== INFORMASI OPERASIONAL ==========",
+  "jam operasional, buka jam berapa, tutup jam berapa, jam buka": "Kantor kami buka:\n📅 Senin - Jumat: 08.00 - 16.00 WIB\n📅 Sabtu - Minggu: TUTUP\n\nPelayanan istirahat: 12.00 - 13.00\n\nKalau di luar jam kerja, bisa chat di sini atau WA 0812-3456-7890 ya!",
   
-  "alamat kantor, dimana kantornya, lokasi": "📍 Alamat Kantor:\nJl.Ayani  No.100, Pontianak\nKalimantan Barat\n\nPatokan: Sebelah Masjid",
+  "alamat kantor, dimana kantornya, lokasi kantor, di mana kantor": "📍 Alamat Kantor:\nJl. Ayani No.100, Pontianak\nKalimantan Barat\n\nPatokan: Sebelah Masjid Raya\n\nBisa pakai Google Maps, cari aja 'Dinas Sosial Pontianak' 😊",
   
-  "kontak, nomor telepon, hubungi": "📞 Hubungi Kami:\n\n☎️ Telepon: (0561) 123456\n📱 WhatsApp: 0812-3456-7890\n📧 Email: dinsos@example.com\n\nAtau chat di sini! "
+  "kontak, nomor telepon, hubungi, nomor wa, whatsapp": "📞 Hubungi Kami:\n\n☎️ Telepon: (0561) 123456\n📱 WhatsApp: 0812-3456-7890\n📧 Email: dinsos@pontianakkota.go.id\n\nAtau langsung chat di sini juga bisa kok!",
+
+  "_section_2": "========== TENTANG DTKS ==========",
+  "dtks, data terpadu, apa itu dtks, dtks itu apa": "DTKS itu Data Terpadu Kesejahteraan Sosial. Ini database pemerintah yang berisi data keluarga miskin dan rentan miskin di seluruh Indonesia.\n\n📊 Fungsi DTKS:\n- Basis data untuk penerima bantuan sosial\n- Dikelola oleh Kemensos\n- Diupdate berkala\n\nKalau mau dapat bantuan sosial, kamu harus terdaftar di DTKS dulu ya! Cek ke RT/RW atau kelurahan untuk memastikan data kamu sudah masuk.",
+
+  "cara daftar dtks, daftar dtks dimana, belum terdaftar dtks": "Untuk daftar DTKS:\n\n1️⃣ Datang ke RT/RW setempat\n2️⃣ Isi formulir pendataan keluarga\n3️⃣ Tunggu petugas kelurahan verifikasi\n4️⃣ Data akan masuk ke sistem DTKS pusat\n\nProses biasanya 2-4 minggu. Bawa KTP, KK, dan surat keterangan tidak mampu ya!\n\nKalau butuh info lebih lanjut, bisa hubungi kelurahan atau chat ke staff kami.",
+
+  "cek dtks, cara cek dtks, sudah terdaftar dtks belum": "Untuk cek apakah kamu udah terdaftar di DTKS:\n\n✅ Cara 1: Tanya ke RT/RW atau kelurahan\n✅ Cara 2: Cek di aplikasi Cek Bansos (download di Play Store)\n✅ Cara 3: Datang langsung ke kantor Dinas Sosial bawa KTP & KK\n\nKalau belum terdaftar padahal eligible, segera daftar ya!",
+
+  "_section_3": "========== SYARAT & PERSYARATAN ==========",
+  "syarat umum, persyaratan umum, dokumen apa saja": "Syarat umum untuk semua program bantuan sosial:\n\n📄 Dokumen:\n1. KTP aktif (asli + fotocopy)\n2. Kartu Keluarga (asli + fotocopy)\n3. Surat Keterangan Tidak Mampu dari RT/RW\n4. Terdaftar di DTKS\n\n⚠️ Setiap program ada syarat khusus lagi ya!\nKetik nomor program atau nama program untuk info detail.",
+
+  "surat tidak mampu, sktm, cara buat sktm": "Surat Keterangan Tidak Mampu (SKTM) bisa dibuat di kelurahan.\n\n📝 Caranya:\n1. Datang ke RT/RW minta pengantar\n2. Bawa pengantar + KTP + KK ke kelurahan\n3. Isi formulir permohonan\n4. Tunggu proses (biasanya 1-3 hari)\n5. Ambil SKTM yang sudah jadi\n\n💰 GRATIS, ga ada biaya! Kalau ada yang minta bayaran, itu pungli!",
+
+  "_section_4": "========== PROSES & PENCAIRAN ==========",
+  "berapa lama prosesnya, kapan cair, berapa lama cair": "⏰ Timeline proses:\n\n📝 Pendaftaran → Verifikasi: 2-4 minggu\n✅ Verifikasi lolos → Pencairan pertama: 1-2 bulan\n💰 Pencairan rutin:\n  - PKH: per 3 bulan\n  - BPNT: tiap bulan\n  - BLT: sesuai kebijakan pemerintah\n\nKamu bakal dihubungi via HP yang didaftarkan kalau udah lolos verifikasi!",
+
+  "belum cair, kenapa belum cair, pencairan terlambat": "Kalau bantuan belum cair, kemungkinan:\n\n1️⃣ Masih dalam proses verifikasi\n2️⃣ Data belum lengkap/belum valid\n3️⃣ Belum masuk kuota penerima\n4️⃣ Ada masalah di rekening/kartu\n\n✅ Solusi:\n- Cek status di kelurahan\n- Hubungi staff Dinas Sosial: 0812-3456-7890\n- Pastikan nomor HP aktif (untuk dihubungi)\n\nSabar ya, proses verifikasi emang butuh waktu 😊",
+
+  "cara ambil bantuan, gimana cara terima, ambil dimana": "Cara terima bantuan tergantung jenisnya:\n\n💳 PKH: Transfer ke rekening bank (biasanya BRI/BNI)\n🏪 BPNT: Ambil pakai kartu di e-Warung terdekat\n💰 BLT: Transfer rekening atau pos\n\nNanti kamu bakal dikasih tau sama petugas cara dan jadwal pengambilannya. Pastikan nomor HP aktif ya!",
+
+  "_section_5": "========== PENGADUAN & MASALAH ==========",
+  "ada masalah, komplain, pengaduan, lapor": "Kalau ada masalah atau mau lapor:\n\n📞 Kontak Pengaduan:\n- WhatsApp: 0812-3456-7890\n- Email: pengaduan@pontianakkota.go.id\n- Datang langsung ke kantor\n\n⚠️ Yang bisa dilaporkan:\n- Pungli (pungutan liar)\n- Data salah\n- Pelayanan tidak baik\n- Bantuan tidak tepat sasaran\n- Penyalahgunaan bantuan\n\nLaporan kamu akan kami proses dan dijamin kerahasiaannya!",
+
+  "pungli, dimintai uang, disuruh bayar": "⚠️ PENTING: SEMUA BANTUAN SOSIAL GRATIS!\n\n🚫 Tidak ada biaya:\n- Pendaftaran GRATIS\n- Verifikasi GRATIS\n- Pencairan GRATIS\n- Tidak ada potongan\n\n❗ Kalau ada yang minta uang mengatasnamakan Dinas Sosial, itu PENIPUAN!\n\nSegera lapor:\n📱 WA: 0812-3456-7890\n📧 Email: pengaduan@pontianakkota.go.id\n\nJangan kasih uang ke siapa pun ya!",
+
+  "_section_6": "========== LAIN-LAIN ==========",
+  "bantuan apa saja, program apa aja, ada program apa": "Program bantuan sosial yang tersedia:\n\n1️⃣ Program Keluarga Harapan (PKH)\n2️⃣ Bantuan Pangan Non Tunai (BPNT)\n3️⃣ Program Indonesia Pintar (PIP)\n4️⃣ Bantuan Langsung Tunai (BLT)\n5️⃣ Bantuan Lansia\n6️⃣ Bantuan Disabilitas\n7️⃣ Rehabilitasi Anak Terlantar\n\nKetik angka atau nama program untuk info detail ya!",
+
+  "bisa dapat lebih dari 1, dapat 2 program, rangkap": "Beberapa bantuan bisa dirangkap, tapi ada aturannya:\n\n✅ Bisa rangkap:\n- PKH + PIP (boleh)\n- BPNT + PIP (boleh)\n- Bantuan Lansia + PKH (boleh)\n\n❌ Tidak bisa rangkap:\n- PKH + BPNT (pilih salah satu)\n- BLT + PKH (biasanya tidak bisa)\n\nTergantung kebijakan pemerintah saat itu. Nanti petugas yang verifikasi akan kasih tau ya!",
+
+  "biaya pendaftaran, bayar berapa, gratis": "💯 SEMUA BANTUAN SOSIAL GRATIS!\n\n🆓 Tidak ada biaya:\n- Pendaftaran: GRATIS\n- Verifikasi: GRATIS  \n- Pencairan: GRATIS\n- Kartu: GRATIS\n\n⚠️ Hati-hati penipuan!\nKalau ada yang minta bayaran atau janjikan bantuan dengan biaya, itu CALO/PENIPU!\n\nLangsung lapor ke kami ya: 0812-3456-7890"
 }

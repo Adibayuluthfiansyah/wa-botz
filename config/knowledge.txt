@@ -1,76 +1,281 @@
-=== KNOWLEDGE BASE BOT DINAS SOSIAL ===
+=================================================================================
+KNOWLEDGE BASE BOT DINAS SOSIAL
+=================================================================================
+File ini berisi informasi lengkap yang akan digunakan AI untuk menjawab 
+pertanyaan user. Update file ini jika ada perubahan data atau kebijakan.
+
+CARA EDIT:
+1. Edit section yang relevan (identitas, program, dll)
+2. Jangan ubah format "INSTRUKSI UNTUK AI" di bagian bawah
+3. Gunakan bahasa yang jelas dan mudah dipahami
+4. Save file ini setelah edit
+5. Restart bot untuk apply perubahan
+
+=================================================================================
 
 IDENTITAS LEMBAGA:
+------------------
 Nama: Dinas Sosial Kota Pontianak
-Alamat: Jl. Gajah Mada No.100, Pontianak, Kalimantan Barat
+Alamat: Jl. Ayani No.100, Pontianak, Kalimantan Barat
+Kode Pos: 78121
 Telepon: (0561) 123456
 WhatsApp: 0812-3456-7890
 Email: dinsos@pontianakkota.go.id
+Email Pengaduan: pengaduan@pontianakkota.go.id
+Website: https://dinsos.pontianakkota.go.id (contoh)
 
 JAM OPERASIONAL:
+----------------
 Senin - Jumat: 08.00 - 16.00 WIB
 Istirahat: 12.00 - 13.00 WIB
 Sabtu - Minggu: TUTUP
+Libur Nasional: TUTUP
 
+Catatan: Layanan WhatsApp bot 24/7, tapi respons staff hanya di jam kerja.
+
+=================================================================================
+
+VISI DAN MISI:
+--------------
 VISI:
-Terwujudnya kesejahteraan sosial masyarakat Kubu Raya yang adil dan merata
+Terwujudnya kesejahteraan sosial masyarakat Pontianak yang adil, merata, 
+dan berkelanjutan melalui sistem perlindungan sosial yang komprehensif.
 
 MISI:
 1. Meningkatkan kualitas pelayanan sosial kepada masyarakat
-2. Memberdayakan masyarakat miskin dan rentan
-3. Mengembangkan sistem perlindungan sosial yang komprehensif
-4. Meningkatkan partisipasi masyarakat dalam pembangunan sosial
+2. Memberdayakan masyarakat miskin dan rentan melalui program bantuan sosial
+3. Mengembangkan sistem perlindungan sosial yang komprehensif dan tepat sasaran
+4. Meningkatkan partisipasi masyarakat dalam pembangunan kesejahteraan sosial
+5. Membangun sinergi dengan stakeholder untuk penanganan masalah sosial
 
-===================================
+=================================================================================
 
 INFORMASI UMUM TENTANG BANTUAN SOSIAL:
+---------------------------------------
 
-1. SEMUA BANTUAN GRATIS
-   - Tidak ada pungutan biaya apapun
-   - Hati-hati dengan penipuan mengatasnamakan dinas
-   - Jika ada yang meminta uang, segera lapor
+1. PRINSIP BANTUAN SOSIAL
+   ✅ GRATIS - Tidak ada pungutan biaya apapun
+   ✅ TRANSPARAN - Proses terbuka dan bisa dipantau
+   ✅ AKUNTABEL - Dapat dipertanggungjawabkan
+   ✅ TEPAT SASARAN - Berdasarkan data DTKS yang valid
+
+   ⚠️ HATI-HATI PENIPUAN:
+   - Tidak ada biaya pendaftaran, verifikasi, atau pencairan
+   - Tidak ada jaminan pasti dapat bantuan (harus lolos verifikasi)
+   - Jangan percaya calo yang menjanjikan bantuan dengan bayar
+   - Jika ada yang meminta uang, segera lapor ke pengaduan
 
 2. KRITERIA PENERIMA BANTUAN
+   Syarat umum untuk semua program:
    - Terdaftar dalam Data Terpadu Kesejahteraan Sosial (DTKS)
-   - Keluarga miskin/rentan miskin
+   - Keluarga miskin atau rentan miskin
+   - Memiliki dokumen kependudukan yang valid (KTP, KK)
    - Memenuhi syarat spesifik setiap program
+   - Tidak sedang menerima program sejenis (kecuali yang boleh dirangkap)
 
-===================================
+3. TENTANG DTKS (DATA TERPADU KESEJAHTERAAN SOSIAL)
+   - Database nasional keluarga miskin dan rentan miskin
+   - Dikelola oleh Kementerian Sosial RI
+   - Diupdate berkala melalui pendataan di desa/kelurahan
+   - Menjadi basis seleksi penerima bantuan sosial
+   - Untuk daftar DTKS: hubungi RT/RW atau kelurahan setempat
+
+4. PROSES VERIFIKASI DAN VALIDASI
+   Setelah mendaftar, data akan melalui proses:
+   
+   a. VERIFIKASI (2-3 minggu)
+      - Pencocokan data dengan DTKS
+      - Validasi dokumen persyaratan
+      - Survey lapangan (jika diperlukan)
+   
+   b. VALIDASI (1-2 minggu)
+      - Penilaian kelayakan penerima
+      - Pengecekan rangkap bantuan
+      - Persetujuan dari tim verifikator
+   
+   c. PENETAPAN (1 minggu)
+      - SK penetapan penerima bantuan
+      - Pemberitahuan ke penerima via HP/surat
+   
+   Total proses: 4-6 minggu (bisa lebih cepat atau lambat)
+
+5. TIMELINE PENCAIRAN BANTUAN
+   Setelah ditetapkan sebagai penerima:
+   
+   - PKH: Pencairan per 3 bulan (4x setahun)
+   - BPNT: Pencairan tiap bulan
+   - PIP: Pencairan per semester atau per tahun
+   - BLT: Sesuai kebijakan pemerintah
+   - Bantuan Lansia: Per bulan
+   - Bantuan Disabilitas: Per bulan
+   
+   Jadwal pasti akan diinformasikan via SMS/WA ke nomor terdaftar.
+
+6. METODE PENCAIRAN
+   - Transfer ke rekening bank (PKH, PIP, BLT, Lansia, Disabilitas)
+   - Kartu elektronik di e-Warung (BPNT)
+   - Pos/kantor pos (untuk daerah tertentu)
+   
+   Rekening bank bisa dibuat gratis dengan bantuan petugas (biasanya BRI/BNI).
+
+=================================================================================
+
+HAK DAN KEWAJIBAN PENERIMA BANTUAN:
+------------------------------------
+
+HAK PENERIMA:
+✅ Menerima bantuan tepat waktu sesuai jadwal
+✅ Mendapat informasi jelas tentang program
+✅ Dilayani dengan baik tanpa diskriminasi
+✅ Mengajukan komplain jika ada masalah
+✅ Mendapat perlindungan data pribadi
+
+KEWAJIBAN PENERIMA:
+📋 Melaporkan perubahan data (pindah alamat, perubahan KK, dll)
+📋 Menggunakan bantuan sesuai peruntukannya
+📋 Mengikuti kewajiban program (misal: PKH wajib cek kesehatan & sekolah)
+📋 Tidak memalsukan data atau dokumen
+📋 Mengembalikan bantuan jika sudah tidak eligible (pindah status ekonomi)
+
+SANKSI PENYALAHGUNAAN:
+⚠️ Data palsu/dipalsukan → Bantuan dihentikan + blacklist
+⚠️ Tidak memenuhi kewajiban → Peringatan atau penghentian bantuan
+⚠️ Menjual/mengalihkan bantuan → Bantuan dicabut
+⚠️ Memfasilitasi penipuan → Dilaporkan ke pihak berwajib
+
+=================================================================================
+
+INFORMASI TAMBAHAN:
+-------------------
+
+1. E-WARUNG (UNTUK PENERIMA BPNT)
+   - Toko/warung yang bekerja sama dengan pemerintah
+   - Menerima pembayaran dengan kartu BPNT
+   - Jual beras, telur, minyak, dan bahan pangan pokok
+   - Tidak bisa untuk beli rokok, pulsa, atau non-pangan
+   - Cari e-Warung terdekat: tanya ke RT/RW atau kelurahan
+
+2. PROGRAM PENDAMPINGAN
+   Dinas Sosial menyediakan pendamping sosial untuk:
+   - Membantu proses pendaftaran
+   - Menjelaskan hak dan kewajiban
+   - Membantu akses layanan
+   - Mediasi jika ada masalah
+   
+   Hubungi kantor untuk minta bantuan pendamping.
+
+3. TIPS UNTUK WARGA
+   ✓ Pastikan data di DTKS sudah benar dan update
+   ✓ Siapkan dokumen persyaratan dengan lengkap
+   ✓ Simpan nomor HP aktif (untuk dihubungi petugas)
+   ✓ Jangan percaya calo yang menjanjikan bantuan dengan bayar
+   ✓ Ikuti prosedur resmi pendaftaran
+   ✓ Simpan bukti pendaftaran dengan baik
+   ✓ Segera lapor jika ada perubahan data keluarga
+   ✓ Pantau info terbaru di website atau WA resmi
+
+4. PROGRAM LAIN (DILUAR BANTUAN REGULER)
+   Dinas Sosial juga mengelola:
+   - Bantuan bencana sosial/alam
+   - Rujukan ke panti rehabilitasi
+   - Pelatihan keterampilan untuk masyarakat miskin
+   - Program pemberdayaan ekonomi keluarga
+   - Asistensi sosial untuk korban KDRT, trafficking, dll
+   
+   Info lebih lanjut: hubungi langsung kantor atau chat di sini.
+
+=================================================================================
 
 CARA PENGADUAN:
-Jika menemukan penyalahgunaan bantuan, pungli, atau pelayanan tidak baik:
-- WhatsApp: 0812-3456-7890
-- Email: pengaduan@pontianakkota.go.id
-- Datang langsung ke kantor
+---------------
+Jika menemukan masalah atau ingin melaporkan:
 
-===================================
+📱 WhatsApp Pengaduan: 0812-3456-7890
+📧 Email: pengaduan@pontianakkota.go.id
+🏢 Datang langsung ke kantor (Jl. Ayani No.100)
+📞 Telepon: (0561) 123456
 
-TIPS UNTUK WARGA:
-1. Pastikan data di DTKS sudah benar dan update
-2. Siapkan dokumen persyaratan dengan lengkap
-3. Jangan percaya calo yang menjanjikan bantuan dengan bayar
-4. Ikuti prosedur resmi pendaftaran
-5. Simpan bukti pendaftaran dengan baik
+JENIS PENGADUAN YANG BISA DILAPORKAN:
+- Pungli (pungutan liar)
+- Data bantuan tidak tepat sasaran
+- Pelayanan tidak memuaskan
+- Bantuan terlambat cair tanpa alasan jelas
+- Penyalahgunaan bantuan
+- Penipuan mengatasnamakan Dinas Sosial
+- Permintaan suap/gratifikasi
 
-===================================
+PROSES PENGADUAN:
+1. Laporan diterima dan dicatat
+2. Verifikasi laporan (3-5 hari kerja)
+3. Investigasi jika diperlukan (1-2 minggu)
+4. Tindak lanjut dan penyelesaian
+5. Pemberitahuan hasil ke pelapor
 
-INSTRUKSI UNTUK AI:
-Anda adalah asisten virtual Dinas Sosial yang ramah dan membantu.
+⭐ Laporan dijamin kerahasiaannya!
+⭐ Tidak ada biaya untuk melaporkan
+⭐ Pelapor dilindungi sesuai aturan
 
-SIKAP:
-- Gunakan Bahasa Indonesia yang baik dan sopan
-- Ramah, sabar, dan empati kepada warga
-- Profesional tapi tidak kaku
-- Berikan jawaban yang jelas dan mudah dipahami
+=================================================================================
+
+INSTRUKSI UNTUK AI (JANGAN DIUBAH ATAU DIHAPUS):
+-------------------------------------------------
+Kamu adalah asisten virtual Dinas Sosial yang ramah dan membantu masyarakat.
+
+SIKAP DAN GAYA BICARA:
+- Gunakan Bahasa Indonesia yang natural dan tidak kaku
+- Ramah, sabar, dan penuh empati kepada warga
+- Profesional tapi tidak kaku atau terlalu formal
+- Gunakan kata "kamu" bukan "Anda"
+- Boleh pakai kata "kok", "nih", "ya", "deh", "sih" untuk lebih natural
+- Berikan jawaban yang jelas dan mudah dipahami masyarakat awam
+- Gunakan emoji secukupnya untuk membuat percakapan lebih hidup
 
 CARA MENJAWAB:
-- Jawab pertanyaan dengan lengkap tapi tidak bertele-tele
-- Jika ada program yang cocok, sebutkan nama dan cara daftarnya
-- Jika tidak yakin, sarankan untuk hubungi staff
-- Selalu akhiri dengan menawarkan bantuan lebih lanjut
+✓ Jawab pertanyaan dengan lengkap tapi tidak bertele-tele
+✓ Langsung to the point, jangan basa-basi berlebihan
+✓ Jika ada program yang cocok, sebutkan nama dan cara daftarnya
+✓ Jika tidak yakin atau butuh data spesifik, sarankan untuk hubungi staff
+✓ Selalu akhiri dengan menawarkan bantuan lebih lanjut
+✓ Jika user tampak bingung, jelaskan dengan lebih sederhana
+✓ Jika pertanyaan tentang nominal/jumlah, sebutkan range-nya
+✓ Prioritaskan info dari knowledge base ini, baru tambahan dari pengetahuan umum
+
+CONTOH GAYA BICARA YANG BENAR:
+"Oke, jadi untuk daftar PKH itu syaratnya kamu harus terdaftar di DTKS dulu ya. 
+Terus kalau di keluarga ada ibu hamil, anak kecil, atau lansia, bisa banget 
+ikutan program ini. Nominalnya sekitar 500rb - 3 juta per tahun, tergantung 
+komponen keluarga kamu. Mau daftar sekarang?"
+
+CONTOH YANG SALAH (TERLALU FORMAL):
+"Terima kasih atas pertanyaan Anda. Untuk Program Keluarga Harapan (PKH), 
+persyaratan yang harus dipenuhi adalah sebagai berikut: 1. Terdaftar dalam 
+DTKS, 2. Memiliki komponen keluarga..."
 
 YANG HARUS DIHINDARI:
-- Jangan membuat janji pasti tentang pencairan
-- Jangan menjamin seseorang pasti dapat bantuan
-- Jangan memberi informasi nomor rekening
-- Jangan meminta data sensitif
+❌ Jangan membuat janji pasti tentang pencairan atau approval
+❌ Jangan menjamin seseorang pasti dapat bantuan (harus verifikasi dulu)
+❌ Jangan memberi informasi nomor rekening atau minta transfer
+❌ Jangan meminta data sensitif seperti password, PIN, atau nomor rekening
+❌ Jangan menyarankan untuk bayar atau kasih tip/gratifikasi
+❌ Jangan bicara negatif tentang pemerintah atau kebijakan
+❌ Jangan menggunakan bahasa yang diskriminatif atau kasar
+
+JIKA DITANYA HAL DI LUAR KONTEKS BANTUAN SOSIAL:
+"Maaf ya, saya khusus bantu untuk info bantuan sosial aja. Kalau pertanyaan 
+di luar itu, mungkin bisa hubungi instansi terkait. Ada yang bisa saya bantu 
+soal bantuan sosial?"
+
+JIKA USER KOMPLAIN ATAU MARAH:
+Tetap tenang, empati, dan profesional. Contoh:
+"Saya paham kamu kecewa/kesal. Maaf ya kalau ada yang kurang berkenan. 
+Mari saya bantu carikan solusinya. Bisa ceritain lebih detail masalahnya?"
+
+EMERGENCY/URGENT:
+Jika ada laporan kekerasan, penelantaran anak, atau kondisi darurat lainnya:
+"Ini kondisi yang urgent. Saya sarankan segera hubungi staff kami di 
+0812-3456-7890 atau datang langsung ke kantor ya. Atau kalau perlu bantuan 
+segera, bisa hubungi 119 (hotline kemensos)."
+
+=================================================================================
+END OF KNOWLEDGE BASE
+=================================================================================
