@@ -424,69 +424,6 @@ function isGreeting(text) {
 
 const registrationState = new Map();
 
-// ============================================================================
-// HYBRID MODE CONFIGURATION
-// ============================================================================
-
-// Configuration constants
-const MESSAGE_MAX_AGE = 12 * 60 * 60; // 12 hours in seconds
-const RATE_LIMIT_MAX = 20; // Max messages per hour per user
-const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour in milliseconds
-
-// Admin numbers (can reply manually without bot interference)
-// TODO: Add your personal WhatsApp number here
-const ADMIN_NUMBERS = [
-  // '628xxxxxxxxxx@c.us', // Your number - uncomment and fill
-];
-
-// Personal contacts blacklist (bot will never reply to these numbers)
-const PERSONAL_CONTACTS = [
-  // '62812xxxxxxx@c.us', // Friend A
-  // '62813xxxxxxx@c.us', // Family B
-];
-
-// Bot keywords for context detection
-const BOT_KEYWORDS = [
-  'bantuan', 'daftar', 'program', 'pkh', 'bpnt', 'pip', 'blt',
-  'dinas', 'sosial', 'menu', 'info', 'syarat', 'cara',
-  'registrasi', 'pendaftaran', 'dtks', 'lansia', 'disabilitas',
-  'faq', 'kontak', 'jam', 'operasional', 'alamat', 'telepon'
-];
-
-// Trigger keywords for new users (opt-in)
-const TRIGGER_KEYWORDS = [
-  'halo', 'hai', 'hi', 'menu', 'mulai', 'info', 
-  'bantuan', 'daftar', 'assalamualaikum', 'pagi', 
-  'siang', 'sore', 'malam', 'permisi'
-];
-
-// State management for hybrid mode
-const activatedUsers = new Map(); // { phoneNumber: { activated: true, timestamp: Date } }
-const userRateLimits = new Map(); // { phoneNumber: { count, resetTime } }
-
-// Helper: Check if current time is within working hours
-function isWorkingHours() {
-  const now = new Date();
-  const hour = now.getHours();
-  const day = now.getDay(); // 0=Sunday, 6=Saturday
-  return (day >= 1 && day <= 5) && (hour >= 8 && hour < 16);
-}
-
-// Helper: Get outside working hours message
-function getOutsideWorkingHoursMessage() {
-  const { greeting } = getTimeBasedGreeting();
-  return (
-    `${greeting}! 🌙\n\n` +
-    `Maaf, saat ini di luar jam kerja kantor.\n\n` +
-    `🕐 *Jam Operasional:*\n` +
-    `Senin - Jumat: 08.00 - 16.00 WIB\n` +
-    `Sabtu - Minggu: TUTUP\n\n` +
-    `Silakan hubungi kami kembali di jam kerja ya! Atau untuk bantuan darurat, hubungi:\n` +
-    `📱 WhatsApp: 0812-3456-7890\n\n` +
-    `Ketik *menu* untuk melihat informasi yang tersedia. 😊`
-  );
-}
-
 function startRegistration(sender, programName) {
   registrationState.set(sender, {
     step: "name",
@@ -600,228 +537,15 @@ client.on("ready", () => {
 });
 
 client.on("message", async (message) => {
-  // ============================================================================
-  // BASIC FILTERS
-  // ============================================================================
-  
-  // Skip messages from bot itself
   if (message.fromMe) return;
-  
-  // Skip group messages
   if (message.from.includes("@g.us")) return;
 
   const sender = message.from;
   const text = message.body.trim();
   const lowerText = text.toLowerCase();
 
-  // ============================================================================
-  // FILTER 1: OLD MESSAGES (Ignore messages older than 12 hours)
-  // ============================================================================
-  const MESSAGE_MAX_AGE_SECONDS = MESSAGE_MAX_AGE;
-  const messageAge = (Date.now() / 1000) - message.timestamp;
-  
-  if (messageAge > MESSAGE_MAX_AGE_SECONDS) {
-    const ageInHours = Math.round(messageAge / 3600);
-    console.log(`⏭️  SKIP: Old message (${ageInHours}h old) from ${sender}: "${text}"`);
-    return;
-  }
+  console.log(`📩 Pesan dari ${sender}: ${text}`);
 
-  // ============================================================================
-  // ENHANCED LOGGING
-  // ============================================================================
-  const chat = await message.getChat();
-  const chatName = chat.name || 'Unknown';
-  const messageTime = new Date(message.timestamp * 1000).toLocaleString('id-ID');
-  
-  console.log(`\n${'='.repeat(70)}`);
-  console.log(`📩 INCOMING MESSAGE`);
-  console.log(`From: ${chatName} (${sender})`);
-  console.log(`Text: ${text}`);
-  console.log(`Time: ${messageTime}`);
-  console.log(`Age: ${Math.round(messageAge / 60)} minutes`);
-  console.log(`Is Contact: ${chat.isMyContact ? 'Yes' : 'No'}`);
-  console.log(`Working Hours: ${isWorkingHours() ? 'Yes ✅' : 'No 🌙'}`);
-  console.log(`${'='.repeat(70)}\n`);
-
-  // ============================================================================
-  // FILTER 2: MANUAL REPLY DETECTION (Skip if already manually replied)
-  // ============================================================================
-  try {
-    // Check if last message in chat is from you (manual reply)
-    if (chat.lastMessage && chat.lastMessage.fromMe) {
-      const lastReplyAge = message.timestamp - chat.lastMessage.timestamp;
-      // If you replied after this message (or within 5 min before it), skip bot reply
-      if (lastReplyAge < 300 && lastReplyAge > -300) {
-        console.log(`✋ SKIP: Manual reply detected from you to ${chatName}`);
-        return;
-      }
-    }
-  } catch (error) {
-    console.log(`⚠️  Could not check manual reply status: ${error.message}`);
-    // Continue anyway
-  }
-
-  // ============================================================================
-  // FILTER 3: PERSONAL CONTACTS BLACKLIST
-  // ============================================================================
-  if (PERSONAL_CONTACTS.includes(sender)) {
-    console.log(`👤 SKIP: Personal contact in blacklist (${chatName})`);
-    return;
-  }
-
-  // ============================================================================
-  // FILTER 4: SMART CONTEXT DETECTION
-  // ============================================================================
-  const containsBotKeyword = BOT_KEYWORDS.some(keyword => lowerText.includes(keyword));
-  const isLikelyPublicUser = !chat.isMyContact || 
-                              chatName.toLowerCase().includes('ibu') ||
-                              chatName.toLowerCase().includes('bapak') ||
-                              chatName.toLowerCase().includes('pak') ||
-                              chatName.toLowerCase().includes('bu');
-
-  // If this looks like personal chat and no bot keywords, check if explicitly triggered
-  if (chat.isMyContact && !isLikelyPublicUser && !containsBotKeyword) {
-    const hasTrigger = TRIGGER_KEYWORDS.some(keyword => lowerText.includes(keyword));
-    if (!hasTrigger) {
-      console.log(`👤 SKIP: Personal chat without bot keywords from ${chatName}`);
-      return;
-    }
-  }
-
-  // ============================================================================
-  // FILTER 5: OPT-IN SYSTEM (New users must trigger with keywords)
-  // ============================================================================
-  const userState = activatedUsers.get(sender);
-  const isActivated = userState && userState.activated;
-
-  if (!isActivated) {
-    const hasTrigger = TRIGGER_KEYWORDS.some(keyword => lowerText.includes(keyword));
-    
-    if (!hasTrigger && !containsBotKeyword) {
-      console.log(`🚫 SKIP: New user without trigger keyword (${chatName}): "${text}"`);
-      return;
-    }
-    
-    // Activate user
-    activatedUsers.set(sender, {
-      activated: true,
-      timestamp: Date.now()
-    });
-    console.log(`✅ User activated: ${chatName} (${sender})`);
-  }
-
-  // ============================================================================
-  // FILTER 6: RATE LIMITING (Anti-spam)
-  // ============================================================================
-  const rateLimit = userRateLimits.get(sender) || { 
-    count: 0, 
-    resetTime: Date.now() + RATE_LIMIT_WINDOW
-  };
-
-  // Reset if time window passed
-  if (Date.now() > rateLimit.resetTime) {
-    rateLimit.count = 0;
-    rateLimit.resetTime = Date.now() + RATE_LIMIT_WINDOW;
-  }
-
-  // Check limit
-  if (rateLimit.count >= RATE_LIMIT_MAX) {
-    if (rateLimit.count === RATE_LIMIT_MAX) {
-      // Send warning only once
-      await message.reply(
-        "⚠️ Anda sudah mencapai batas maksimal pesan per jam (20 pesan).\n\n" +
-        "Untuk bantuan lebih lanjut, silakan hubungi langsung:\n" +
-        "📱 WhatsApp: 0812-3456-7890\n" +
-        "☎️ Telepon: (0561) 123456\n\n" +
-        "Terima kasih atas pengertiannya! 🙏"
-      );
-      console.log(`🚫 RATE LIMIT: User ${chatName} reached limit`);
-    }
-    rateLimit.count++;
-    userRateLimits.set(sender, rateLimit);
-    return;
-  }
-
-  // Increment counter
-  rateLimit.count++;
-  userRateLimits.set(sender, rateLimit);
-  console.log(`📊 Rate limit: ${rateLimit.count}/${RATE_LIMIT_MAX} for ${chatName}`);
-
-  // ============================================================================
-  // ADMIN COMMANDS (Admin-only features)
-  // ============================================================================
-  if (ADMIN_NUMBERS.includes(sender)) {
-    if (lowerText === 'bot status') {
-      const uptime = Math.floor(process.uptime() / 3600);
-      const activatedCount = activatedUsers.size;
-      const reply = 
-        `🤖 *BOT STATUS*\n\n` +
-        `✅ Status: Running\n` +
-        `⏰ Uptime: ${uptime} hours\n` +
-        `👥 Activated users: ${activatedCount}\n` +
-        `🕐 Working hours: ${isWorkingHours() ? 'YES ✅' : 'NO 🌙'}\n` +
-        `📊 Bot ready: ${botReady}\n` +
-        `💾 Memory: ${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)} MB`;
-      await message.reply(reply);
-      console.log(`👨‍💼 Admin command executed: bot status`);
-      return;
-    }
-
-    if (lowerText.startsWith('bot blacklist ')) {
-      const number = text.substring(14).trim();
-      if (!PERSONAL_CONTACTS.includes(number)) {
-        PERSONAL_CONTACTS.push(number);
-        await message.reply(`✅ Number added to blacklist: ${number}`);
-        console.log(`👨‍💼 Admin added to blacklist: ${number}`);
-      } else {
-        await message.reply(`ℹ️ Number already in blacklist: ${number}`);
-      }
-      return;
-    }
-
-    if (lowerText === 'bot stats') {
-      const rateLimitStats = Array.from(userRateLimits.entries())
-        .map(([num, data]) => `${num}: ${data.count}`)
-        .slice(0, 5)
-        .join('\n');
-      await message.reply(
-        `📊 *BOT STATISTICS*\n\n` +
-        `Active sessions: ${activatedUsers.size}\n` +
-        `Rate limited users: ${userRateLimits.size}\n\n` +
-        `Top users:\n${rateLimitStats || 'None'}`
-      );
-      return;
-    }
-  }
-
-  // ============================================================================
-  // WORKING HOURS CHECK (Auto-reply outside working hours)
-  // ============================================================================
-  const workingHours = isWorkingHours();
-  
-  if (!workingHours) {
-    // Outside working hours - send auto-reply for non-info queries
-    const isInfoQuery = lowerText.includes('jam') || 
-                         lowerText.includes('operasional') ||
-                         lowerText.includes('buka') ||
-                         lowerText.includes('tutup') ||
-                         lowerText.includes('kontak') ||
-                         lowerText === 'menu' ||
-                         lowerText === '4';
-    
-    if (!isInfoQuery) {
-      const reply = getOutsideWorkingHoursMessage();
-      await message.reply(reply);
-      console.log(`🌙 Auto-reply sent (outside working hours) to ${chatName}`);
-      return;
-    }
-    // If info query, continue to process normally
-    console.log(`ℹ️  Processing info query outside working hours from ${chatName}`);
-  }
-
-  // ============================================================================
-  // MAIN MESSAGE PROCESSING (Original bot logic)
-  // ============================================================================
   let reply = "";
 
   if (registrationState.has(sender)) {
@@ -906,29 +630,14 @@ client.on("message", async (message) => {
     if (faqAnswer) {
       reply = `${faqAnswer}\n\nSemoga membantu ya! Ada yang mau ditanya lagi?`;
     } else {
-      // AI fallback with better error handling
-      try {
-        await message.reply("Sebentar ya, saya cari jawabannya... ⏳");
-        reply = await askAI(text);
-        reply +=
-          "\n\nSemoga jawaban saya membantu! Kalau masih bingung atau mau tanya lagi, langsung chat aja. 😊";
-      } catch (error) {
-        console.error("❌ AI Error:", error.message);
-        reply = 
-          "Maaf, saya sedang mengalami kendala teknis saat memproses pertanyaan Anda. 😔\n\n" +
-          "Silakan:\n" +
-          "1. Coba lagi beberapa saat\n" +
-          "2. Ketik *menu* untuk melihat info yang tersedia\n" +
-          "3. Hubungi staff kami:\n" +
-          "   📱 WA: 0812-3456-7890\n" +
-          "   ☎️ Telp: (0561) 123456\n\n" +
-          "Terima kasih atas pengertiannya! 🙏";
-      }
+      await message.reply("Sebentar ya...");
+      reply = await askAI(text);
+      reply +=
+        "\n\nSemoga jawaban saya membantu! Kalau masih bingung atau mau tanya lagi, langsung chat aja. 😊";
     }
   }
 
   await message.reply(reply);
-  console.log(`📤 Reply sent to ${chatName}: ${reply.substring(0, 80)}...`);
 });
 
 client.on("disconnected", (reason) => {
